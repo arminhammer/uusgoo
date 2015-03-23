@@ -10,6 +10,7 @@
 
 var uusgoos = require('../');
 
-uusgoos(function() {
-  console.log("Awesome!");
+uusgoos(['Test 1', 'Test 2'], function(pattern) {
+  console.log('The pattern is: ' + pattern);
 });
+
