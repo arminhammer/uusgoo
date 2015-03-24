@@ -25,7 +25,7 @@ describe('uusgoos', function () {
 
    });
 
-  it('should return a [a-z] if the strings are not the same, but are letters', function () {
+  it('should return a [a-z] if the strings are not the same, but are lower case ASCII letters', function () {
 
     uusgoos(['what', 'that', 'phat'], function(pattern) {
 
@@ -34,5 +34,50 @@ describe('uusgoos', function () {
     });
 
   });
+
+   it('should return a [A-Z] if the characters are upper case ASCII', function () {
+
+    uusgoos(['What', 'That', 'Phat'], function(pattern) {
+
+      pattern.should.equal('[A-Z]hat');
+
+    });
+
+  });
+
+  it('should return a [a-zA-Z] if the characters are non-digit letters', function () {
+
+
+    uusgoos(['What', 'That', 'phat'], function(pattern) {
+
+      pattern.should.equal('[a-zA-Z]hat');
+
+    });
+
+    uusgoos(['what', 'That', 'Phat'], function(pattern) {
+
+      pattern.should.equal('[a-zA-Z]hat');
+
+    });
+
+    uusgoos(['What', 'that', 'phat'], function(pattern) {
+
+      pattern.should.equal('[a-zA-Z]hat');
+
+    });
+
+  });
+
+  /*
+  it('should return a \w if the strings are not the same, but are letters', function () {
+
+    uusgoos(['What', 'That', 'Phat'], function(pattern) {
+
+      pattern.should.equal('[A-Z]hat');
+
+    });
+
+  });
+  */
 
 });
