@@ -5,8 +5,14 @@ var assert = require('should');
 
 describe('uusgoos', function () {
 
-  it('should be awesome', function () {
-    uusgoos().should.equal('awesome');
+  it('should return a specific word if all strings are equal', function () {
+
+    uusgoos(['what', 'what', 'what'], function(pattern) {
+
+      pattern.should.equal('what')
+
+    });
+
   });
 
 });
