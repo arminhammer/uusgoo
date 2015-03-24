@@ -68,16 +68,20 @@ describe('uusgoos', function () {
 
   });
 
-  /*
-  it('should return a \w if the strings are not the same, but are letters', function () {
+  it('should return a \\w if the strings are not the same, and are a mix of digits and letters', function () {
 
-    uusgoos(['What', 'That', 'Phat'], function(pattern) {
+    uusgoos(['What', 'that', '1hat'], function(pattern) {
 
-      pattern.should.equal('[A-Z]hat');
+      pattern.should.equal('\\what');
+
+    });
+
+    uusgoos(['1hat', 'That', 'phat'], function(pattern) {
+
+      pattern.should.equal('\\what');
 
     });
 
   });
-  */
 
 });
