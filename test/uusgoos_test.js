@@ -25,16 +25,14 @@ describe('uusgoos', function () {
 
    });
 
-  /*
-  it('should return a \w if the strings are not the same, but are letters', function () {
+  it('should return a [a-z] if the strings are not the same, but are letters', function () {
 
-    uusgoos(['what', 'that'], function(pattern) {
+    uusgoos(['what', 'that', 'phat'], function(pattern) {
 
-      pattern.should.equal('\\what');
+      pattern.should.equal('[a-z]hat');
 
     });
 
   });
-  */
 
 });
