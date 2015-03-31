@@ -84,4 +84,21 @@ describe('uusgoos', function () {
 
   });
 
+  it('should consolidate bunched patterns', function () {
+
+    uusgoos(['aaat', 'aaat', 'aaat'], function(pattern) {
+
+      pattern.should.equal('a{3}t');
+
+    });
+
+    uusgoos(['aaataaaa', 'aaataaaa', 'aaataaaa'], function(pattern) {
+
+      pattern.should.equal('a{3}ta{4}');
+
+    });
+
+  });
+
+
 });
